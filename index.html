@@ -67,10 +67,11 @@
       border-radius: 5px;
       font-weight: bold;
       box-shadow: 0 2px 5px #0003;
-      transition: background 0.2s, transform 0.5s;
+      transition: background 0.2s;
       font-size: 5vw;
       opacity: 0;
       transform: translateX(100vw);
+      /* Animation nur EINMAL */
       animation: slide-in 0.8s cubic-bezier(.41,1.25,.9,.97) forwards;
     }
     a:nth-child(1) { animation-delay: 0.2s; }
@@ -93,8 +94,13 @@
       );
       transform: skewX(-30deg);
       z-index: 2;
-      transition: none;
+      pointer-events: none;
+      animation: shine 2.8s 1.7s linear infinite;
     }
+    a:nth-child(1)::before { animation-delay: 1.7s; }
+    a:nth-child(2)::before { animation-delay: 2.1s; }
+    a:nth-child(3)::before { animation-delay: 2.5s; }
+
     a:after {
       /* Optional sanfter Schein an den Kanten */
       content:"";
@@ -105,22 +111,7 @@
       opacity: 0.25;
       pointer-events: none;
     }
-    /* Glanz läuft animiert und auf hover nochmal schneller */
-    a,
-    a:before {
-      will-change: transform, opacity;
-    }
-    a {
-      /* Fix "button" stacking in flexbox on mobile */
-      z-index: 1;
-    }
-    /* Starte die Glanz-Animation nach dem Einblenden */
-    a.animated {
-      animation: slide-in 0.8s cubic-bezier(.41,1.25,.9,.97) forwards, shine 2.8s 1.2s linear infinite;
-    }
-    a:hover::before {
-      animation: shine-hover 0.8s linear;
-    }
+
     @keyframes slide-in {
       to {
         opacity: 1;
@@ -131,10 +122,6 @@
       0% { left: -80%; }
       40% { left: 110%; }
       100% { left: 110%; }
-    }
-    @keyframes shine-hover {
-      from { left: -60%; }
-      to { left: 110%; }
     }
 
     a:hover {
@@ -154,17 +141,6 @@
       p { font-size: 1.2em; }
     }
   </style>
-  <script>
-    // Für neue Browser: Glanz erst starten, wenn Einblenden fertig ist
-    window.addEventListener("DOMContentLoaded", function() {
-      var buttons = document.querySelectorAll('.btn-group a');
-      buttons.forEach(function(btn, i) {
-        setTimeout(function(){
-          btn.classList.add("animated");
-        },600 + 400*i);
-      });
-    });
-  </script>
 </head>
 <body>
   <h1>Vorsprung durch Technik 🚗✨</h1>
@@ -178,6 +154,6 @@
     <a href="https://www.audi-mediacenter.com/de" target="_blank">Audi Media Center</a>
   </div>
   
-  <p style="margin-top:40px;">Mit Liebe gedruckt 💖 – dein Bruder Julian</p>
+  <p style="margin-top:40px;">Print your Day – JulTech</p>
 </body>
 </html>
