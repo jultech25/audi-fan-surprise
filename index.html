@@ -51,7 +51,6 @@
         0 0 64px #23e3ff88;
       animation: audi-glow 2.2s ease-in-out infinite alternate;
       border: 2px solid #26bada99;
-      /* für "neon effect" */
     }
     @keyframes audi-glow {
       0% {
@@ -65,7 +64,6 @@
         border-color: #ffffffcc;
       }
     }
-
     .btn-group {
       display: flex;
       flex-direction: column;
@@ -96,7 +94,6 @@
     a:nth-child(1) { animation-delay: 0.2s; }
     a:nth-child(2) { animation-delay: 0.6s; }
     a:nth-child(3) { animation-delay: 1.0s; }
-
     a::before {
       content: "";
       position: absolute;
@@ -118,7 +115,6 @@
     a:nth-child(1)::before { animation-delay: 1.7s; }
     a:nth-child(2)::before { animation-delay: 2.1s; }
     a:nth-child(3)::before { animation-delay: 2.5s; }
-
     a:after {
       content:"";
       position: absolute;
@@ -128,7 +124,6 @@
       opacity: 0.25;
       pointer-events: none;
     }
-
     @keyframes slide-in {
       to {
         opacity: 1;
@@ -140,14 +135,38 @@
       40% { left: 110%; }
       100% { left: 110%; }
     }
-
     a:hover {
       background: #fff;
     }
-    p {
-      text-shadow: 2px 2px 8px #000;
-      font-size: 5vw;
-      margin-top: 6vw;
+    .footer-signature {
+      margin-top: 40px;
+      font-size: 1.4em;
+      color: #caddff;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: 600;
+      text-shadow: 0 0 8px #55aaff, 0 0 24px #183a7f66;
+      letter-spacing: 1px;
+      background: rgba(28,34,58,0.4);
+      border-radius: 12px;
+      display: inline-block;
+      padding: 0.45em 1.3em;
+      box-shadow: 0 0 8px #8ae1ff30, 0 0 24px #0b1b3f22 inset;
+      animation: signature-glow 3s ease-in-out infinite alternate;
+      transition: background 0.3s, color 0.3s;
+    }
+    @keyframes signature-glow {
+      0% {
+        box-shadow: 0 0 8px #8ae1ff30, 0 0 24px #0b1b3f22 inset;
+        text-shadow: 0 0 7px #55aaff, 0 0 20px #183a7f22;
+        color: #caddff;
+        background: rgba(28,34,58,0.4);
+      }
+      100% {
+        box-shadow: 0 0 20px #69bdffcc, 0 0 40px #caddff44 inset;
+        text-shadow: 0 0 19px #55aaff, 0 0 40px #183a7f44;
+        color: #fff;
+        background: rgba(41,55,101,0.65);
+      }
     }
     @media (min-width: 600px) {
       body { padding: 50px; }
@@ -155,7 +174,7 @@
       .audi-text { font-size: 2em; padding: 15px 0; margin: 20px auto; }
       .btn-group { gap: 20px; }
       a { width: 360px; display: block; font-size: 1.2em; padding: 10px 20px; min-width: unset; max-width: unset;}
-      p { font-size: 1.2em; }
+      .footer-signature { font-size: 1.1em; padding: 0.6em 2em; }
     }
   </style>
 </head>
@@ -171,6 +190,8 @@
     <a href="https://www.audi-mediacenter.com/de" target="_blank">Audi Media Center</a>
   </div>
   
-  <p style="margin-top:40px;">Print your Day – JulTech</p>
+  <div class="footer-signature">
+    Print your Day - JulTech
+  </div>
 </body>
 </html>
