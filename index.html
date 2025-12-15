@@ -37,15 +37,35 @@
     .audi-text {
       margin: 5vw auto;
       max-width: 70vw;
-      background: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.15);
       border-radius: 20px;
       padding: 5vw 0;
-      box-shadow: 0 0 20px #000;
+      box-shadow: 0 0 20px #55caff, 0 0 60px #0ff4  inset;
       font-size: 6vw;
-      color: #111;
+      color: #fff;
       font-weight: bold;
       letter-spacing: 6px;
+      text-shadow: 
+        0 0 12px #23e3ff,
+        0 0 36px #23e3ff,
+        0 0 64px #23e3ff88;
+      animation: audi-glow 2.2s ease-in-out infinite alternate;
+      border: 2px solid #26bada99;
+      /* für "neon effect" */
     }
+    @keyframes audi-glow {
+      0% {
+        box-shadow: 0 0 20px #55caff, 0 0 60px #0ff4  inset;
+        text-shadow: 0 0 10px #23e3ff, 0 0 12px #23e3ffa0, 0 0 24px #23e3ff60;
+        border-color: #26bada99;
+      }
+      100% {
+        box-shadow: 0 0 50px #fff, 0 0 100px #1dafff;
+        text-shadow: 0 0 30px #1dafff, 0 0 64px #1dafff, 0 0 128px #fff9;
+        border-color: #ffffffcc;
+      }
+    }
+
     .btn-group {
       display: flex;
       flex-direction: column;
@@ -71,14 +91,12 @@
       font-size: 5vw;
       opacity: 0;
       transform: translateX(100vw);
-      /* Animation nur EINMAL */
       animation: slide-in 0.8s cubic-bezier(.41,1.25,.9,.97) forwards;
     }
     a:nth-child(1) { animation-delay: 0.2s; }
     a:nth-child(2) { animation-delay: 0.6s; }
     a:nth-child(3) { animation-delay: 1.0s; }
 
-    /* Glanz-Animation für die Buttons */
     a::before {
       content: "";
       position: absolute;
@@ -102,7 +120,6 @@
     a:nth-child(3)::before { animation-delay: 2.5s; }
 
     a:after {
-      /* Optional sanfter Schein an den Kanten */
       content:"";
       position: absolute;
       left: 0; right: 0; bottom: 0; top: 0;
