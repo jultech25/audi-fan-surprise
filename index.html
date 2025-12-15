@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audi Fan Surprise</title>
   <style>
     body {
@@ -9,31 +10,35 @@
       background: #08152b;
       color: #eee;
       text-align: center;
-      padding: 50px;
+      padding: 5vw 2vw;
       margin: 0;
       min-height: 100vh;
+      box-sizing: border-box;
     }
     h1 {
       color: #c0c0c0;
-      font-size: 3em;
+      font-size: 8vw;
       text-shadow: 2px 2px 6px #000;
+      margin-top: 4vw;
+      margin-bottom: 4vw;
     }
     .audi-text {
-      margin: 20px auto;
-      width: 200px;
+      margin: 5vw auto;
+      max-width: 70vw;
       background: rgba(255,255,255,0.7);
       border-radius: 20px;
-      padding: 15px;
+      padding: 5vw 0;
       box-shadow: 0 0 20px #000;
-      font-size: 2em;
+      font-size: 6vw;
       color: #111;
       font-weight: bold;
       letter-spacing: 6px;
     }
     a {
-      display: inline-block;
-      margin: 15px;
-      padding: 10px 20px;
+      display: block;
+      margin: 6vw auto;
+      max-width: 90vw;
+      padding: 5vw 0;
       background: rgba(192,192,192,0.85);
       color: #111;
       text-decoration: none;
@@ -41,12 +46,22 @@
       font-weight: bold;
       box-shadow: 0 2px 5px #0003;
       transition: background 0.2s;
+      font-size: 5vw;
     }
     a:hover {
       background: #fff;
     }
     p {
       text-shadow: 2px 2px 8px #000;
+      font-size: 5vw;
+      margin-top: 6vw;
+    }
+    @media (min-width: 600px) {
+      body { padding: 50px; }
+      h1 { font-size: 3em; }
+      .audi-text { font-size: 2em; padding: 15px 0; margin: 20px auto; }
+      a { width: auto; display: inline-block; font-size: 1.2em; padding: 10px 20px; margin: 15px; }
+      p { font-size: 1.2em; }
     }
   </style>
 </head>
